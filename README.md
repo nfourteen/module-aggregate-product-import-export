@@ -2,6 +2,9 @@
 
 CSV import and export of aggregate product child links, via an `aggregate_children` column.
 
+> [!WARNING]
+> **Beta - not for production use.** This module is part of the Aggregate Product suite, which is in beta. It has no tagged releases yet, known bugs are still being fixed, and behavior, configuration and stored data may change between commits without an upgrade path. Use it in development or staging environments only.
+
 ## The `aggregate_children` column
 
 Comma-separates children, `=` separates SKU from quantity. Quantity must be numeric and >= 1, defaulting to 1.
