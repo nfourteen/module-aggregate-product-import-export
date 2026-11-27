@@ -209,7 +209,7 @@ class ExportAggregateChildrenTest extends TestCase
         if (empty($lines[0])) {
             return [];
         }
-        return str_getcsv($lines[0]);
+        return str_getcsv($lines[0], escape: '\\');
     }
 
     /**
@@ -221,13 +221,13 @@ class ExportAggregateChildrenTest extends TestCase
         if (count($lines) < 2) {
             return [];
         }
-        $headers = str_getcsv(array_shift($lines));
+        $headers = str_getcsv(array_shift($lines), escape: '\\');
         $rows = [];
         foreach ($lines as $line) {
             if (trim($line) === '') {
                 continue;
             }
-            $values = str_getcsv($line);
+            $values = str_getcsv($line, escape: '\\');
             if (count($values) === count($headers)) {
                 $rows[] = array_combine($headers, $values);
             }
